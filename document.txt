@@ -6,3 +6,47 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFhZlhxR9/RmfYlIkxFaf/LO94b0yqFA1pE/MtEkqz
 
 
 ###http://old.moe.gov.cn//publicfiles/business/htmlfiles/moe/moe_634/201505/187754.html
+
+
+git
+1. 配置用户名
+git config --global user.name "cunho"
+2.配置邮箱
+git config --global user.email "ancunho@naver.com"
+3.其他
+git config --global merge.tool "kdiff3"
+git config --global corre.autocrlf false
+
+#编码配置
+git config --global gui.encoding utf-8
+git config --global core.quotepath off
+
+#window上还需要配置
+git config --global core.ignorecase false
+
+#git ssh key pair 配置
+ssh-keygen -t rsa -C "ancunho@naver.com"
+ssh-add ~/.ssh/id_rsa
+如果报错，执行 eval `ssh-agent`
+cat ~/.ssh/id_rsa.pub
+
+git初始化
+git init
+git status
+git add .
+git status
+#提交到本地仓库
+git commit -am '20180112'    
+
+git remote add origin git@github.com:ancunho/miniapp_backend.git
+git branch #查看分支
+git pull
+git push -u origin master
+git push -u -f origin master #强制push
+git branch -r
+
+
+版本建立
+git checkout -b V1.0 origin/master #-b是开分支的意思 后面加分支名字 在后面是参考
+git branch
+git push origin HEAD -u
