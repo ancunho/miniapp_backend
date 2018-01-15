@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CKBIZ.USER">
+
+    <select id="getAllUser" resultType="vip.ckbiz.vo.USERVO">
+        <![CDATA[
+        SELECT ID
+                ,WEIXIN_OPEN_ID
+                ,USERNAME
+                ,PASSWORD
+                ,EMAIL
+                ,PHONE
+                ,QUESTION
+                ,ANSWER
+                ,ROLE
+                ,date_format(CREATETIME,'%Y-%m-%d %T') AS CREATETIME
+                ,date_format(UPDATETIME,'%Y-%m-%d %T') AS UPDATETIME
+        FROM    CKBIZ_USER
+        ORDER BY ID DESC
+        ]]>
+    </select>
+
+</mapper>
