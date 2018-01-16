@@ -187,3 +187,49 @@ Nginx重新编译添加模块
 1 [root@localhost sbin]# ./nginx -s quit
 2 [root@localhost sbin]# ./nginx
 nginx重新加载模块完成！
+
+
+다른방법:
+三、配置文件
+1.下面为配置文件 /usr/local/nginx/conf/vhost/daj.conf
+
+server{
+#比起默认的80 使用了443 默认 是ssl方式  多出default之后的ssl
+        listen 443 default ssl;
+#default 可省略
+#开启  如果把ssl on；这行去掉，ssl写在443端口后面。这样http和https的链接都可以用
+        ssl on;
+#证书(公钥.发送到客户端的)
+        ssl_certificate ssl/server.crt;
+#私钥,
+        ssl_certificate_key ssl/server.key;
+#下面是绑定域名
+        server_name www.daj.com;
+        location / {
+#禁止跳转
+        proxy_redirect off;
+#代理淘宝
+proxy_pass https://www.tao.com/;
+        }
+}
+
+
+四、开启nginx的ssl模块
+1.the "ssl" parameter requires ngx_http_ssl_module  in /usr/local/nginx/conf/nginx.conf:37
+原因是nginx缺少http_ssl_module模块，编译安装时带上--with-http_ssl_module配置就可以了
+2.如果已经安装过nginx,想要添加模块看下面
+1)切换到nginx源码包
+cd /usr/local/src/nginx-1.11.3
+2)查看ngixn原有的模块
+/usr/local/nginx/sbin/nginx -V
+3)重新配置
+./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module
+4)重新编译，不需要make  install安装。否则会覆盖
+make
+5)备份原有已经安装好的nginx
+cp /usr/local/nginx/sbin/nginx /usr/local/nginx/sbin/nginx.bak
+6)将刚刚编译好的nginx覆盖掉原来的nginx(ngixn必须停止)
+cp ./objs/nginx /usr/local/nginx/sbin/
+这时，会提示是否覆盖，请输入yes，直接回车默认不覆盖
+7)启动nginx，查看nginx模块，发现已经添加
+/usr/local/nginx/sbin/nginx -V　
