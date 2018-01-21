@@ -12,7 +12,7 @@ public class USERVO implements Serializable {
     private String PHONE;
     private String QUESTION;
     private String ANSWER;
-    private int ROLE;
+    private String ROLE;
     private String CREATETIME;
     private String UPDATETIME;
 
@@ -80,11 +80,11 @@ public class USERVO implements Serializable {
         this.ANSWER = ANSWER;
     }
 
-    public int getROLE() {
+    public String getROLE() {
         return ROLE;
     }
 
-    public void setROLE(int ROLE) {
+    public void setROLE(String ROLE) {
         this.ROLE = ROLE;
     }
 

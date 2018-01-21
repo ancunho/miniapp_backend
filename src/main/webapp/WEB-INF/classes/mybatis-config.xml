@@ -15,7 +15,7 @@
     </settings>
 
     <typeAliases>
-        <!--<typeAlias alias="USERVO"           type="vip.ckbiz.vo.USERVO" />-->
+        <typeAlias alias="USERVO"           type="vip.ckbiz.vo.USERVO" />
         <!--<typeAlias alias="MENUVO"           type="vip.ckbiz.vo.MENUVO" />-->
         <!--<typeAlias alias="LOGVO"            type="vip.ckbiz.vo.LOGVO" />-->
         <!--<typeAlias alias="POSTSVO"          type="vip.ckbiz.vo.POSTSVO" />-->

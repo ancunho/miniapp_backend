@@ -20,4 +20,70 @@
         ]]>
     </select>
 
+    <select id="checkUsername" parameterType="String" resultType="int">
+        <![CDATA[
+        SELECT  COUNT(1)
+        FROM    CKBIZ_USER
+        WHERE   USERNAME = #{username}
+        ]]>
+    </select>
+
+    <select id="checkEmail" parameterType="String" resultType="int">
+        <![CDATA[
+        SELECT  COUNT(1)
+        FROM    CKBIZ_USER
+        WHERE   EMAIL = #{email}
+        ]]>
+    </select>
+
+    <select id="selectLogin" parameterType="USERVO" resultType="USERVO">
+        <![CDATA[
+        SELECT  ID
+               ,WEIXIN_OPEN_ID
+               ,USERNAME
+               ,PASSWORD
+               ,EMAIL
+               ,PHONE
+               ,QUESTION
+               ,ANSWER
+               ,ROLE
+               ,date_format(CREATETIME,'%Y-%m-%d %T') AS CREATETIME
+               ,date_format(UPDATETIME,'%Y-%m-%d %T') AS UPDATETIME
+        FROM    CKBIZ_USER
+        WHERE   USERNAME = #{USERNAME}
+        AND     PASSWORD = #{PASSWORD}
+        ]]>
+    </select>
+
+    <insert id="register" parameterType="USERVO">
+        <![CDATA[
+        INSERT INTO CKBIZ_USER
+                    (
+                     WEIXIN_OPEN_ID
+                    ,USERNAME
+                    ,PASSWORD
+                    ,EMAIL
+                    ,PHONE
+                    ,QUESTION
+                    ,ANSWER
+                    ,ROLE
+                    ,CREATETIME
+                    )
+        VALUES
+                    (
+                     #{WEIXIN_OPEN_ID}
+                    ,#{USERNAME}
+                    ,#{PASSWORD}
+                    ,#{EMAIL}
+                    ,#{PHONE}
+                    ,#{QUESTION}
+                    ,#{ANSWER}
+                    ,#{ROLE}
+                    ,sysdate()
+                    )
+        ]]>
+    </insert>
+
+
+
 </mapper>
