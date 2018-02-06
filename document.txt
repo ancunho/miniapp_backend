@@ -233,3 +233,46 @@ cp ./objs/nginx /usr/local/nginx/sbin/
 这时，会提示是否覆盖，请输入yes，直接回车默认不覆盖
 7)启动nginx，查看nginx模块，发现已经添加
 /usr/local/nginx/sbin/nginx -V　
+
+
+
+
+
+public static void main(String[] args) throws Exception {
+//        Map<String, Map<String, String>> list = new HashMap<String, Map<String, String>>();
+//        list.put("first", formatValue("first", "#173177"));
+//        list.put("keyword1", formatValue("uname", "#173177"));
+//        list.put("keyword2", formatValue("carno", "#173177"));
+//        list.put("keyword3", formatValue("insrancetime", "#173177"));
+//        list.put("remark", formatValue("remark", "#173177"));
+//        Map<String, Object> dataMap = new HashMap<String, Object>();
+//
+//        dataMap.put("touser", "opZqGjvgIweSMT4K_xljt2U5SR2E");
+//        dataMap.put("template_id", "HY1D5k44znSGhrk9cAP9wyUidYcoFWcJ3L_fCmrEweo");
+//        dataMap.put("url", "http://www.baidu.com");
+//        dataMap.put("topcolor", "#FF0000");
+//        dataMap.put("data", list);
+//
+//        System.out.println(new GsonBuilder().serializeNulls().create().toJson(dataMap));
+
+        FastDateFormat sdf = FastDateFormat.getInstance("yyyy-MM-dd hh:mm:ss");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String date1 = "2019-11-26";
+
+        Date startDate = simpleDateFormat.parse(date1);
+        System.out.println(simpleDateFormat.format(startDate));
+//        Date today = new Date();
+        Calendar calendar1 = Calendar.getInstance();
+        Calendar calendar2 = Calendar.getInstance();
+        calendar1.setTime(startDate);
+        calendar2.set(2017, 10, 26);
+
+        int count = 0;
+        while (!calendar2.after(calendar1)) {
+            count++;
+            calendar2.add(Calendar.DATE, 1);
+            System.out.println(calendar2.get(Calendar.YEAR) + "년" + (calendar2.get(Calendar.MONTH) + 1) + "월" + calendar2.get(Calendar.DATE) + "일");
+        }
+
+        System.out.println(">>>>>>>>>" + count);
+    }
