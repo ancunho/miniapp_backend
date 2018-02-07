@@ -1,5 +1,6 @@
 http://www.sysembed.com.cn/
 http://www.wisepeak.com
+http://www.kazovision.com.cn
 
 
 #####ssh 公钥key
