@@ -27,6 +27,16 @@ public class CategoryManageController {
     @Autowired
     private CategoryService categoryService;
 
+    @RequestMapping(value = "list.do", method = RequestMethod.GET)
+    public String admin_category_list(HttpSession session) {
+        USERVO uservo = (USERVO) session.getAttribute(Const.CURRENT_USER);
+        if (uservo == null) {
+            return "redirect:/page/admin/login.do";
+        }
+        return "admin/adminCategoryList";
+
+    }
+
     @RequestMapping(value = "add_category.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse addCategory(HttpSession session, String categoryName, @RequestParam(value = "parentId", defaultValue = "0") Integer parentId) {
