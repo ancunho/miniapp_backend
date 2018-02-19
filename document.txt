@@ -1,3 +1,21 @@
+https://wenku.baidu.com/view/4073c84550e2524de4187e09.html
+https://wenku.baidu.com/view/e774524bb52acfc789ebc9fa.html
+https://wenku.baidu.com/view/a09830c31ed9ad51f11df251.html
+https://max.book118.com/html/2016/0128/34297607.shtm
+
+http://blog.didispace.com/
+http://www.importnew.com
+
+
+http://codingxiaxw.cn/2016/11/27/53-maven-ssm-seckill-dao/
+http://how2j.cn
+
+
+http://www.sysembed.com.cn/
+http://www.wisepeak.com
+http://www.kazovision.com.cn
+
+
 #####ssh 公钥key
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFhZlhxR9/RmfYlIkxFaf/LO94b0yqFA1pE/MtEkqzmkcb8c2VZo5DURePRERcbBAzKB/uxQRm/xyVqla40QoWSFHF+b+Ojxos3YSXbTY9FG5HuKrPYMWKlHRoosX4hpm5KPfbTjJ8TBLHAtNZR1O4kbvdcIK8tLejmxBB0R4+IW9BT57+a9OqkBxxeLR3qUhMvB7xq7khoYuWp3NASCBfKfF5kvM/sMR7+8EmDyAv/hmbaTj0MmxrvtSAc0QTiVfDAFTLl12fzF9M0zzEcNlcxpYnRtJKiK+tGDfsyH6ZoY02Xvk0Cio9WzoM3JbYu/bppVoBraIsyVoW1wvwcMbT ancunho@naver.com
 
@@ -236,6 +254,7 @@ cp ./objs/nginx /usr/local/nginx/sbin/
 
 
 
+<<<<<<< HEAD
 CREATE TABLE `CKBIZ_CATEGORY` (
 `ID` INT(11) NOT NULL auto_increment COMMENT '类别ID'
 ,`PARENT_ID` INT(11) DEFAULT NULL
@@ -248,3 +267,45 @@ CREATE TABLE `CKBIZ_CATEGORY` (
 
 
 ) ENGINE=InnoDB AUTO_INCREMENT=100032 DEFAULT CHARSET=utf8
+=======
+
+
+public static void main(String[] args) throws Exception {
+//        Map<String, Map<String, String>> list = new HashMap<String, Map<String, String>>();
+//        list.put("first", formatValue("first", "#173177"));
+//        list.put("keyword1", formatValue("uname", "#173177"));
+//        list.put("keyword2", formatValue("carno", "#173177"));
+//        list.put("keyword3", formatValue("insrancetime", "#173177"));
+//        list.put("remark", formatValue("remark", "#173177"));
+//        Map<String, Object> dataMap = new HashMap<String, Object>();
+//
+//        dataMap.put("touser", "opZqGjvgIweSMT4K_xljt2U5SR2E");
+//        dataMap.put("template_id", "HY1D5k44znSGhrk9cAP9wyUidYcoFWcJ3L_fCmrEweo");
+//        dataMap.put("url", "http://www.baidu.com");
+//        dataMap.put("topcolor", "#FF0000");
+//        dataMap.put("data", list);
+//
+//        System.out.println(new GsonBuilder().serializeNulls().create().toJson(dataMap));
+
+        FastDateFormat sdf = FastDateFormat.getInstance("yyyy-MM-dd hh:mm:ss");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String date1 = "2019-11-26";
+
+        Date startDate = simpleDateFormat.parse(date1);
+        System.out.println(simpleDateFormat.format(startDate));
+//        Date today = new Date();
+        Calendar calendar1 = Calendar.getInstance();
+        Calendar calendar2 = Calendar.getInstance();
+        calendar1.setTime(startDate);
+        calendar2.set(2017, 10, 26);
+
+        int count = 0;
+        while (!calendar2.after(calendar1)) {
+            count++;
+            calendar2.add(Calendar.DATE, 1);
+            System.out.println(calendar2.get(Calendar.YEAR) + "년" + (calendar2.get(Calendar.MONTH) + 1) + "월" + calendar2.get(Calendar.DATE) + "일");
+        }
+
+        System.out.println(">>>>>>>>>" + count);
+    }
+>>>>>>> fe0924519ba6c776f1ed8963bc17198576723c1e
