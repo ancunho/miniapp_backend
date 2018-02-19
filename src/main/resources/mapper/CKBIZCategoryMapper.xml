@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CKBIZ.Category">
+
+    <insert id="addCategory" parameterType="vip.ckbiz.vo.CategoryVO">
+        <![CDATA[
+        INSERT INTO CKBIZ_CATEGORY
+                    (
+                     PARENT_ID
+                    ,CATEGORYNAME
+                    ,STATUS
+                    ,SORT_ORDER
+                    ,CREATETIME
+                    )
+        VALUES
+                    (
+                     #{PARENT_ID}
+                    ,#{CATEGORYNAME}
+                    ,#{STATUS}
+                    ,#{SORT_ORDER}
+                    ,sysdate()
+                    )
+        ]]>
+    </insert>
+
+
+
+</mapper>

@@ -45,5 +45,9 @@
         <property name="sqlSession" ref="sqlSession" />
     </bean>
 
+    <bean id="categoryService" class="vip.ckbiz.service.impl.CategoryServiceImpl">
+        <property name="sqlSession" ref="sqlSession" />
+    </bean>
+
 
 </beans>

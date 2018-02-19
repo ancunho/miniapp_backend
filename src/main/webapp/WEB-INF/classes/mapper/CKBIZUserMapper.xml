@@ -36,7 +36,7 @@
         ]]>
     </select>
 
-    <select id="selectLogin" parameterType="USERVO" resultType="USERVO">
+    <select id="selectLogin" parameterType="map" resultType="USERVO">
         <![CDATA[
         SELECT  ID
                ,WEIXIN_OPEN_ID

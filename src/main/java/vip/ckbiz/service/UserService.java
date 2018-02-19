@@ -30,4 +30,11 @@ public interface UserService {
      */
     ServerResponse<String> checkValid(String str, String type);
 
+    /**
+     * 判断是否管理员
+     * @param uservo
+     * @return
+     */
+    ServerResponse checkAdmin(USERVO uservo);
+
 }

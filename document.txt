@@ -233,3 +233,18 @@ cp ./objs/nginx /usr/local/nginx/sbin/
 这时，会提示是否覆盖，请输入yes，直接回车默认不覆盖
 7)启动nginx，查看nginx模块，发现已经添加
 /usr/local/nginx/sbin/nginx -V　
+
+
+
+CREATE TABLE `CKBIZ_CATEGORY` (
+`ID` INT(11) NOT NULL auto_increment COMMENT '类别ID'
+,`PARENT_ID` INT(11) DEFAULT NULL
+,`NAME` VARCHAR(50) DEFAULT NULL
+,`STATUS` TINYINT(1) DEFAULT '1'
+,`SORT_ORDER` INT(4) DEFAULT NULL
+,`CREATETIME` DATETIME DEFAULT NULL
+,`UPDATETIME` DATETIME DEFAULT NULL
+,PRIMARY KEY (`ID`)
+
+
+) ENGINE=InnoDB AUTO_INCREMENT=100032 DEFAULT CHARSET=utf8

@@ -85,6 +85,13 @@ public class UserServiceImpl implements UserService {
         return ServerResponse.createBySuccessMessage("校验成功");
     }
 
+    public ServerResponse checkAdmin(USERVO uservo) {
+        if (uservo != null && uservo.getROLE().equals(Const.Role.ROLE_ADMIN)) {
+            return ServerResponse.createBySuccess();
+        }
+        return ServerResponse.createByError();
+    }
+
     public SqlSession getSqlSession() {
         return sqlSession;
     }
