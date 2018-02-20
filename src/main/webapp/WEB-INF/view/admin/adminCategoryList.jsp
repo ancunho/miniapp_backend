@@ -18,7 +18,7 @@
     <!-- Sidebar Start -->
     <div class="col-sm-3 col-md-2 sidebar">
         <div class="list-group">
-            <a href="#" class="list-group-item active">分类列表</a>>
+            <a href="#" class="list-group-item active">分类列表</a>
             <a href="#" class="list-group-item">新增分类</a>
         </div>
     </div>

@@ -6,5 +6,6 @@ import vip.ckbiz.vo.CategoryVO;
 public interface CategoryService {
 
     ServerResponse addCategory(CategoryVO categoryVO);
+    ServerResponse updateCategoryName(CategoryVO categoryVO);
 
 }

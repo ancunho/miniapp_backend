@@ -8,6 +8,7 @@ public class CategoryVO {
     private int PARENT_ID;
     private String CATEGORYNAME;
     private int STATUS;
+    private int USE_FLAG;
     private int SORT_ORDER;
     private Date CREATETIME;
     private Date UPDATETIME;
@@ -44,6 +45,14 @@ public class CategoryVO {
         this.STATUS = STATUS;
     }
 
+    public int getUSE_FLAG() {
+        return USE_FLAG;
+    }
+
+    public void setUSE_FLAG(int USE_FLAG) {
+        this.USE_FLAG = USE_FLAG;
+    }
+
     public int getSORT_ORDER() {
         return SORT_ORDER;
     }
@@ -75,6 +84,7 @@ public class CategoryVO {
                 ", PARENT_ID=" + PARENT_ID +
                 ", CATEGORYNAME='" + CATEGORYNAME + '\'' +
                 ", STATUS=" + STATUS +
+                ", USE_FLAG=" + USE_FLAG +
                 ", SORT_ORDER=" + SORT_ORDER +
                 ", CREATETIME=" + CREATETIME +
                 ", UPDATETIME=" + UPDATETIME +

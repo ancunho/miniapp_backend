@@ -57,8 +57,33 @@ public class CategoryManageController {
         } else {
             return ServerResponse.createByErrorMessage("无权限操作，需要管理员权限");
         }
-
     }
+
+    @RequestMapping(value = "update_category_name.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse updateCategoryName(HttpSession session, Integer categoryId, String categoryName) {
+        USERVO uservo = (USERVO) session.getAttribute(Const.CURRENT_USER);
+        if (uservo == null) {
+            return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(), "用户未登录，请登录");
+        }
+
+        if (categoryId == null || StringUtils.isBlank(categoryName)) {
+            return ServerResponse.createByErrorMessage("参数错误");
+        }
+
+        //관리원인지 판단
+        if (userService.checkAdmin(uservo).isSuccess()) {
+            //更新categoryName
+            CategoryVO categoryVO = new CategoryVO();
+            categoryVO.setID(categoryId);
+            categoryVO.setCATEGORYNAME(categoryName);
+            return categoryService.updateCategoryName(categoryVO);
+        } else {
+            return ServerResponse.createByErrorMessage("无权限操作，需要管理员权限");
+        }
+    }
+
+
 
     public UserService getUserService() {
         return userService;

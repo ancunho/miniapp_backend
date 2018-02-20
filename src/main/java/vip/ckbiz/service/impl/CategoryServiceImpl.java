@@ -19,6 +19,14 @@ public class CategoryServiceImpl implements CategoryService {
         return ServerResponse.createByErrorMessage("添加失败");
     }
 
+    public ServerResponse updateCategoryName(CategoryVO categoryVO) {
+        int resultCount = sqlSession.update("CKBIZ.Category.updateCategoryName", categoryVO);
+        if (resultCount > 0) {
+            return ServerResponse.createBySuccessMessage("修改成功");
+        }
+        return ServerResponse.createByErrorMessage("添加失败");
+    }
+
     public SqlSession getSqlSession() {
         return sqlSession;
     }

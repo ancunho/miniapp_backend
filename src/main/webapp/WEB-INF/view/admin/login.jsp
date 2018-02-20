@@ -64,7 +64,7 @@
                     } else if (response.status == 0) {
                         var $frmCommon = $("#frmSPCICommon");
                         if ($frmCommon.length < 1) {
-                            $frmCommon = $("<form/>").attr({id:"frmCunhoCommon", method:'POST'});
+                            $frmCommon = $("<form/>").attr({id:"frmCunhoCommon", method:'GET'});
                             $(document.body).append($frmCommon);
                         }
                         $frmCommon.empty();
