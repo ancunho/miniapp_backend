@@ -1,8 +1,327 @@
+https://wenku.baidu.com/view/4073c84550e2524de4187e09.html
+https://wenku.baidu.com/view/e774524bb52acfc789ebc9fa.html
+https://wenku.baidu.com/view/a09830c31ed9ad51f11df251.html
+https://max.book118.com/html/2016/0128/34297607.shtm
+
+http://blog.didispace.com/
+http://www.importnew.com
+
+
+http://codingxiaxw.cn/2016/11/27/53-maven-ssm-seckill-dao/
+http://how2j.cn
+
+
+http://www.sysembed.com.cn/
+http://www.wisepeak.com
+http://www.kazovision.com.cn
+
+################################################################################
+################################################################################
+################################################################################
+################################################################################
+
+分类管理
+	1. 分类列表页面-admin_category_list.jsp
+	2. 新增分类页面-admin_category_new.jsp
+	3. 分类编辑页面-admin_category_edit.jsp
+	4. 属性管理（待定）
+
+################################################################################
+################################################################################
+################################################################################
+################################################################################
+
+
 #####ssh 公钥key
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFhZlhxR9/RmfYlIkxFaf/LO94b0yqFA1pE/MtEkqzmkcb8c2VZo5DURePRERcbBAzKB/uxQRm/xyVqla40QoWSFHF+b+Ojxos3YSXbTY9FG5HuKrPYMWKlHRoosX4hpm5KPfbTjJ8TBLHAtNZR1O4kbvdcIK8tLejmxBB0R4+IW9BT57+a9OqkBxxeLR3qUhMvB7xq7khoYuWp3NASCBfKfF5kvM/sMR7+8EmDyAv/hmbaTj0MmxrvtSAc0QTiVfDAFTLl12fzF9M0zzEcNlcxpYnRtJKiK+tGDfsyH6ZoY02Xvk0Cio9WzoM3JbYu/bppVoBraIsyVoW1wvwcMbT ancunho@naver.com
 
 
-
+######http://www.wxapp-union.com
 
 
 ###http://old.moe.gov.cn//publicfiles/business/htmlfiles/moe/moe_634/201505/187754.html
+
+
+git
+1. 配置用户名
+git config --global user.name "cunho"
+2.配置邮箱
+git config --global user.email "ancunho@naver.com"
+3.其他
+git config --global merge.tool "kdiff3"
+git config --global corre.autocrlf false
+
+#编码配置
+git config --global gui.encoding utf-8
+git config --global core.quotepath off
+
+#window上还需要配置
+git config --global core.ignorecase false
+
+#git ssh key pair 配置
+ssh-keygen -t rsa -C "ancunho@naver.com"
+ssh-add ~/.ssh/id_rsa
+如果报错，执行 eval `ssh-agent`
+cat ~/.ssh/id_rsa.pub
+
+git初始化
+git init
+git status
+git add .
+git status
+#提交到本地仓库
+git commit -am '20180112'    
+
+git remote add origin git@github.com:ancunho/miniapp_backend.git
+git branch #查看分支
+git pull
+git push -u origin master
+git push -u -f origin master #强制push
+git branch -r
+
+
+版本建立
+git checkout -b V1.0 origin/master #-b是开分支的意思 后面加分支名字 在后面是参考
+git branch
+git push origin HEAD -u
+
+
+
+#############################################
+申请证书
+登录：阿里云控制台，产品与服务，证书服务，购买证书。
+购买：证书类型选择 免费型DV SSL，然后完成购买。
+补全：在 我的证书 控制台，找到购买的证书，在操作栏里选择 补全。填写证书相关信息。
+域名验证：可以选择 DNS，如果域名用了阿里云的 DNS 服务，再勾选一下 证书绑定的域名在 阿里云的云解析。
+上传：系统生成 CSR，点一下 创建。
+提交审核。
+如果一切正常，10 分钟左右，申请的证书就会审核通过。
+
+
+@@@@nginx설정
+80과 443 같이 씀
+server {
+        listen       80;
+	listen 443 ssl;
+        server_name  localhost;
+
+        #charset koi8-r;
+
+        #access_log  logs/host.access.log  main;
+        #
+        ssl_certificate   /usr/local/nginx/ssl/ckbiz.vip/214448848860519.pem;
+	ssl_certificate_key  /usr/local/nginx/ssl/ckbiz.vip/214448848860519.key;
+	ssl_session_timeout 5m;
+ 	ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+ 	ssl_ciphers AESGCM:ALL:!DH:!EXPORT:!RC4:+HIGH:!MEDIUM:!LOW:!aNULL:!eNULL;
+ 	ssl_prefer_server_ciphers on;
+
+        location / {
+            root   html;
+            index  index.html index.htm;
+	    proxy_pass http://localhost:8080;
+        }
+
+        #error_page  404              /404.html;
+
+        # redirect server error pages to the static page /50x.html
+        #
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+
+        # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+        #
+        #location ~ \.php$ {
+        #    proxy_pass   http://127.0.0.1;
+        #}
+
+        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+        #
+        #location ~ \.php$ {
+        #    root           html;
+        #    fastcgi_pass   127.0.0.1:9000;
+        #    fastcgi_index  index.php;
+        #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+        #    include        fastcgi_params;
+        #}
+
+        # deny access to .htaccess files, if Apache's document root
+        # concurs with nginx's one
+        #
+        #location ~ /\.ht {
+        #    deny  all;
+        #}
+    }
+
+
+
+###################################################################################################
+###################################################################################################
+###################################################################################################
+
+Nginx重新编译添加模块
+1. 找到安装nginx的源码根目录(即安装包存放目录)，如果没有的话下载新的源码并解压
+
+1 [root@localhost /]# cd software
+2 [root@localhost software]# ls
+3 nginx-1.10.2  nginx-1.10.2.tar.gz
+
+
+2. 查看nginx版本极其编译参数
+
+/usr/local/nginx/sbin/nginx -V
+
+
+
+3. 进入nginx源码目录
+
+1 [root@localhost software]# cd nginx-1.10.2
+
+
+4.重新编译的代码和模块
+
+[root@localhost nginx-1.10.2]# ./configure --prefix=/usr/local/nginx --with-http_ssl_module
+
+
+5.  make下 （注意：千万别make install，否则就覆盖安装了），make完之后在/software/nginx-1.10.2/objs目录下就多了个nginx，这个就是新版本的程序了
+
+6. 备份旧的nginx程序
+
+1 [root@localhost ~]# cd /usr/local/nginx/sbin/
+2 [root@localhost sbin]# ls
+3 nginx
+4 [root@localhost sbin]# cp nginx nginx_back_by_zhang20161117
+5 [root@localhost sbin]# ls
+6 nginx  nginx_back_by_zhang20161117
+7. 删除旧的nginx程序，并把新的nginx程序复制到/usr/local/nginx/sbin/下
+
+1 [root@localhost sbin]# rm nginx
+2 rm：是否删除普通文件 "nginx"？y
+3 [root@localhost sbin]# cp /software/nginx-1.10.2/objs/nginx /usr/local/nginx/sbin/
+8. 测试新的nginx程序是否正确
+
+1 [root@localhost sbin]# /usr/local/nginx/sbin/nginx -t
+2 nginx: the configuration file /usr/local/nginx/conf/nginx.conf syntax is ok
+3 nginx: configuration file /usr/local/nginx/conf/nginx.conf test is successful
+9. 平滑启动服务 (非必须)
+
+1 [root@localhost sbin]# /usr/local/nginx/sbin/nginx -s reload
+10. 查看模块是否已安装 (非必须)
+
+1 [root@localhost sbin]# /usr/local/nginx/sbin/nginx -V
+2 nginx version: nginx/1.10.2
+3 built by gcc 4.8.5 20150623 (Red Hat 4.8.5-4) (GCC)
+4 built with OpenSSL 1.0.1e-fips 11 Feb 2013
+5 TLS SNI support enabled
+6 configure arguments: --prefix=/usr/local/nginx --with-http_ssl_module
+11. 重启
+
+1 [root@localhost sbin]# ./nginx -s quit
+2 [root@localhost sbin]# ./nginx
+nginx重新加载模块完成！
+
+
+다른방법:
+三、配置文件
+1.下面为配置文件 /usr/local/nginx/conf/vhost/daj.conf
+
+server{
+#比起默认的80 使用了443 默认 是ssl方式  多出default之后的ssl
+        listen 443 default ssl;
+#default 可省略
+#开启  如果把ssl on；这行去掉，ssl写在443端口后面。这样http和https的链接都可以用
+        ssl on;
+#证书(公钥.发送到客户端的)
+        ssl_certificate ssl/server.crt;
+#私钥,
+        ssl_certificate_key ssl/server.key;
+#下面是绑定域名
+        server_name www.daj.com;
+        location / {
+#禁止跳转
+        proxy_redirect off;
+#代理淘宝
+proxy_pass https://www.tao.com/;
+        }
+}
+
+
+四、开启nginx的ssl模块
+1.the "ssl" parameter requires ngx_http_ssl_module  in /usr/local/nginx/conf/nginx.conf:37
+原因是nginx缺少http_ssl_module模块，编译安装时带上--with-http_ssl_module配置就可以了
+2.如果已经安装过nginx,想要添加模块看下面
+1)切换到nginx源码包
+cd /usr/local/src/nginx-1.11.3
+2)查看ngixn原有的模块
+/usr/local/nginx/sbin/nginx -V
+3)重新配置
+./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module
+4)重新编译，不需要make  install安装。否则会覆盖
+make
+5)备份原有已经安装好的nginx
+cp /usr/local/nginx/sbin/nginx /usr/local/nginx/sbin/nginx.bak
+6)将刚刚编译好的nginx覆盖掉原来的nginx(ngixn必须停止)
+cp ./objs/nginx /usr/local/nginx/sbin/
+这时，会提示是否覆盖，请输入yes，直接回车默认不覆盖
+7)启动nginx，查看nginx模块，发现已经添加
+/usr/local/nginx/sbin/nginx -V　
+
+
+
+<<<<<<< HEAD
+CREATE TABLE `CKBIZ_CATEGORY` (
+`ID` INT(11) NOT NULL auto_increment COMMENT '类别ID'
+,`PARENT_ID` INT(11) DEFAULT NULL
+,`NAME` VARCHAR(50) DEFAULT NULL
+,`STATUS` TINYINT(1) DEFAULT '1'
+,`SORT_ORDER` INT(4) DEFAULT NULL
+,`CREATETIME` DATETIME DEFAULT NULL
+,`UPDATETIME` DATETIME DEFAULT NULL
+,PRIMARY KEY (`ID`)
+
+
+) ENGINE=InnoDB AUTO_INCREMENT=100032 DEFAULT CHARSET=utf8
+=======
+
+
+public static void main(String[] args) throws Exception {
+//        Map<String, Map<String, String>> list = new HashMap<String, Map<String, String>>();
+//        list.put("first", formatValue("first", "#173177"));
+//        list.put("keyword1", formatValue("uname", "#173177"));
+//        list.put("keyword2", formatValue("carno", "#173177"));
+//        list.put("keyword3", formatValue("insrancetime", "#173177"));
+//        list.put("remark", formatValue("remark", "#173177"));
+//        Map<String, Object> dataMap = new HashMap<String, Object>();
+//
+//        dataMap.put("touser", "opZqGjvgIweSMT4K_xljt2U5SR2E");
+//        dataMap.put("template_id", "HY1D5k44znSGhrk9cAP9wyUidYcoFWcJ3L_fCmrEweo");
+//        dataMap.put("url", "http://www.baidu.com");
+//        dataMap.put("topcolor", "#FF0000");
+//        dataMap.put("data", list);
+//
+//        System.out.println(new GsonBuilder().serializeNulls().create().toJson(dataMap));
+
+        FastDateFormat sdf = FastDateFormat.getInstance("yyyy-MM-dd hh:mm:ss");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String date1 = "2019-11-26";
+
+        Date startDate = simpleDateFormat.parse(date1);
+        System.out.println(simpleDateFormat.format(startDate));
+//        Date today = new Date();
+        Calendar calendar1 = Calendar.getInstance();
+        Calendar calendar2 = Calendar.getInstance();
+        calendar1.setTime(startDate);
+        calendar2.set(2017, 10, 26);
+
+        int count = 0;
+        while (!calendar2.after(calendar1)) {
+            count++;
+            calendar2.add(Calendar.DATE, 1);
+            System.out.println(calendar2.get(Calendar.YEAR) + "년" + (calendar2.get(Calendar.MONTH) + 1) + "월" + calendar2.get(Calendar.DATE) + "일");
+        }
+
+        System.out.println(">>>>>>>>>" + count);
+    }
+>>>>>>> fe0924519ba6c776f1ed8963bc17198576723c1e
