@@ -103,4 +103,21 @@ public class USERVO implements Serializable {
     public void setUPDATETIME(String UPDATETIME) {
         this.UPDATETIME = UPDATETIME;
     }
+
+    @Override
+    public String toString() {
+        return "USERVO{" +
+                "ID=" + ID +
+                ", WEIXIN_OPEN_ID='" + WEIXIN_OPEN_ID + '\'' +
+                ", USERNAME='" + USERNAME + '\'' +
+                ", PASSWORD='" + PASSWORD + '\'' +
+                ", EMAIL='" + EMAIL + '\'' +
+                ", PHONE='" + PHONE + '\'' +
+                ", QUESTION='" + QUESTION + '\'' +
+                ", ANSWER='" + ANSWER + '\'' +
+                ", ROLE='" + ROLE + '\'' +
+                ", CREATETIME='" + CREATETIME + '\'' +
+                ", UPDATETIME='" + UPDATETIME + '\'' +
+                '}';
+    }
 }

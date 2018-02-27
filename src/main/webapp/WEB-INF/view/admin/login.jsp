@@ -54,7 +54,7 @@
 
             $.ajax({
                 type : 'POST'
-                ,url : contextRootPath + '/user/login.do'
+                ,url : contextRootPath + '/manage/user/login.do'
                 ,data : param
                 ,dataType : 'json'
                 ,success : function(response){
@@ -64,12 +64,12 @@
                     } else if (response.status == 0) {
                         var $frmCommon = $("#frmSPCICommon");
                         if ($frmCommon.length < 1) {
-                            $frmCommon = $("<form/>").attr({id:"frmCunhoCommon", method:'GET'});
+                            $frmCommon = $("<form/>").attr({id:"frmCunhoCommon", method:'POST'});
                             $(document.body).append($frmCommon);
                         }
                         $frmCommon.empty();
                         $frmCommon.attr('target', '_self');
-                        $frmCommon.attr('action', contextRootPath + '/manage/category/list.do');
+                        $frmCommon.attr('action', contextRootPath + '/page/admin/category/list.do');
 
                         $frmCommon.submit();
                     }
