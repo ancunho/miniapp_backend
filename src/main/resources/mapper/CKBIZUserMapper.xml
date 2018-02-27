@@ -15,7 +15,7 @@
                 ,ROLE
                 ,date_format(CREATETIME,'%Y-%m-%d %T') AS CREATETIME
                 ,date_format(UPDATETIME,'%Y-%m-%d %T') AS UPDATETIME
-        FROM    CKBIZ_USER
+        FROM    MALL_USER
         ORDER BY ID DESC
         ]]>
     </select>
@@ -23,7 +23,7 @@
     <select id="checkUsername" parameterType="String" resultType="int">
         <![CDATA[
         SELECT  COUNT(1)
-        FROM    CKBIZ_USER
+        FROM    MALL_USER
         WHERE   USERNAME = #{username}
         ]]>
     </select>
@@ -31,7 +31,7 @@
     <select id="checkEmail" parameterType="String" resultType="int">
         <![CDATA[
         SELECT  COUNT(1)
-        FROM    CKBIZ_USER
+        FROM    MALL_USER
         WHERE   EMAIL = #{email}
         ]]>
     </select>
@@ -49,7 +49,7 @@
                ,ROLE
                ,date_format(CREATETIME,'%Y-%m-%d %T') AS CREATETIME
                ,date_format(UPDATETIME,'%Y-%m-%d %T') AS UPDATETIME
-        FROM    CKBIZ_USER
+        FROM    MALL_USER
         WHERE   USERNAME = #{USERNAME}
         AND     PASSWORD = #{PASSWORD}
         ]]>
@@ -57,7 +57,7 @@
 
     <insert id="register" parameterType="USERVO">
         <![CDATA[
-        INSERT INTO CKBIZ_USER
+        INSERT INTO MALL_USER
                     (
                      WEIXIN_OPEN_ID
                     ,USERNAME

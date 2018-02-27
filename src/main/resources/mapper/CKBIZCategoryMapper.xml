@@ -4,7 +4,7 @@
 
     <insert id="addCategory" parameterType="vip.ckbiz.vo.CategoryVO">
         <![CDATA[
-        INSERT INTO CKBIZ_CATEGORY
+        INSERT INTO MALL_CATEGORY
                     (
                      PARENT_ID
                     ,CATEGORYNAME
@@ -24,7 +24,7 @@
     </insert>
 
     <update id="updateCategoryName" parameterType="vip.ckbiz.vo.CategoryVO">
-        UPDATE CKBIZ_CATEGORY
+        UPDATE MALL_CATEGORY
         <set>
             <if test="PARENT_ID != null">
             PARENT_ID = #{PARENT_ID}
