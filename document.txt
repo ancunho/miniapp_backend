@@ -354,7 +354,31 @@ public static void main(String[] args) throws Exception {
 
 
 
-EVENT01
-    1. EVENT_ID
-    2. EVENT_NAME
-    3. EVENT_DESC
+EVENT01 -- 活动信息表
+	1.  ID			
+	2.  PUBLISHER
+	3.  TITLE
+	4.  DESCIPTION
+	5.  PIC
+	6.  TYPE
+	7.  ISSHOW
+	8.  STARTTIME
+	9.  ENDTIME
+	10. ADDRESS
+	11. LATITUDE
+	12. LONGITUDE
+	13. PEOPLENUM
+	14. CREATETIME
+	15. UPDATETIME
+
+EVENT02 -- 活动信息扩展表
+	1. ID
+	2. EVENT_ID
+	3. STATUS //活动状态,(1:准备中,2:进行中,3:已结束)
+	4. STATUS_NAME
+	5. QRCODE
+	6. CREATETIME
+	7. UPDATETIME 
+
+EVENT03 -- 活动参与表
+	1. 
