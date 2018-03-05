@@ -74,8 +74,8 @@
                         $frmCommon.submit();
                     }
                 }
-                ,error : function(){
-
+                ,error : function(req, status, e) {
+                    alert(req, status, e);
                 }
             });
 
