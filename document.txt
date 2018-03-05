@@ -351,3 +351,10 @@ public static void main(String[] args) throws Exception {
         System.out.println(">>>>>>>>>" + count);
     }
 >>>>>>> fe0924519ba6c776f1ed8963bc17198576723c1e
+
+
+
+EVENT01
+    1. EVENT_ID
+    2. EVENT_NAME
+    3. EVENT_DESC

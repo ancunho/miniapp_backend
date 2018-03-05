@@ -3,27 +3,28 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<title>后台首页</title>
-    <%@include file="../admin_include/adminHtml.jsp"%>
+    <title>Event</title>
+    <%@include file="../portal_include/portalHtml.jsp"%>
 </head>
 <body>
 <!-- header start -->
 <div id="header">
-    <%@include file="../admin_include/adminHeader.jsp"%>
+    <%@include file="../portal_include/portalHeader.jsp"%>
 </div>
 <!-- //header end -->
 
 <!-- container start -->
 <div id="container">
-
+    event index
 </div>
 <!-- //container end -->
 
 <!-- footer start -->
 <div id="footer">
-    <%@include file="../admin_include/adminFooter.jsp"%>
+    <%@include file="../portal_include/portalFooter.jsp"%>
 </div>
 <!-- //footer end -->
+
 
 </body>
 </html>
