@@ -353,6 +353,20 @@ public static void main(String[] args) throws Exception {
 >>>>>>> fe0924519ba6c776f1ed8963bc17198576723c1e
 
 
+CUSTOER -- 用户表
+	1.  ID
+	2.  USERNAME
+	3.  PASSWORD
+	4.  USERTYPE
+	5.  OPENID
+	6.  MOBILENO
+	7.  ADDRESS
+	8.  OPTION01
+	9.  OPTION02
+	10. OPTION03
+	11. CREATETIME
+	12. UPDATETIME
+
 
 EVENT01 -- 活动信息表
 	1.  ID			ID
@@ -389,3 +403,4 @@ EVENT03 -- 活动参与表
 	6. WIN_YN		是否中奖
 	7. CREATETIME		生成日期
 	8. UPDATETIME		更新日期
+

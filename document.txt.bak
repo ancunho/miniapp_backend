@@ -372,13 +372,20 @@ EVENT01 -- 活动信息表
 	15. UPDATETIME		更新日期
 
 EVENT02 -- 活动信息扩展表
-	1. ID
-	2. EVENT_ID
+	1. ID			ID
+	2. EVENT_ID		活动ID
 	3. STATUS //活动状态,(1:准备中,2:进行中,3:已结束)
-	4. STATUS_NAME
-	5. QRCODE
-	6. CREATETIME
-	7. UPDATETIME 
+	4. STATUS_NAME		状态名称
+	5. QRCODE		二维码
+	6. CREATETIME		生成日期
+	7. UPDATETIME		更新日期
 
 EVENT03 -- 活动参与表
-	1. 
+	1. ID			ID
+	2. EVENT_ID		活动ID
+	3. SEQ			序号
+	4. USERID		用户ID
+	5. OPENID		用户微信openid
+	6. WIN_YN		是否中奖
+	7. CREATETIME		生成日期
+	8. UPDATETIME		更新日期
