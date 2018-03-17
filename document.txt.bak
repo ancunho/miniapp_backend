@@ -380,3 +380,5 @@ EVENT02 -- 活动信息扩展表
 	6. CREATETIME
 	7. UPDATETIME 
 
+EVENT03 -- 活动参与表
+	1. 
