@@ -355,21 +355,21 @@ public static void main(String[] args) throws Exception {
 
 
 EVENT01 -- 活动信息表
-	1.  ID			
-	2.  PUBLISHER
-	3.  TITLE
-	4.  DESCIPTION
-	5.  PIC
-	6.  TYPE
-	7.  ISSHOW
-	8.  STARTTIME
-	9.  ENDTIME
-	10. ADDRESS
-	11. LATITUDE
-	12. LONGITUDE
-	13. PEOPLENUM
-	14. CREATETIME
-	15. UPDATETIME
+	1.  ID			ID
+	2.  PUBLISHER		活动创建者
+	3.  TITLE		活动标题
+	4.  DESCIPTION		活动描述
+	5.  PIC			活动Main图片
+	6.  TYPE		活动类型
+	7.  ISSHOW		是否显示
+	8.  STARTTIME		开始日期
+	9.  ENDTIME		结束日期
+	10. ADDRESS		活动举行地址
+	11. LATITUDE		LATITUDE
+	12. LONGITUDE		LONGITUDE
+	13. PEOPLENUM		参与人数
+	14. CREATETIME		生成日期
+	15. UPDATETIME		更新日期
 
 EVENT02 -- 活动信息扩展表
 	1. ID
