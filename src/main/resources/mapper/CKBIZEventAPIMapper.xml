@@ -28,8 +28,8 @@
     <insert id="insertEvent01" useGeneratedKeys="true" keyProperty="ID" parameterType="vip.ckbiz.vo.EVENT01VO">
         <![CDATA[
         INSERT INTO EVENT01
-                    (
-                    ,PUBLISHER
+                    (ID,
+                    PUBLISHER
                     ,TITLE
                     ,DESCRIPTION
                     ,PIC
@@ -45,7 +45,7 @@
                     ,UPDATETIME
                     )
                     VALUES
-                    (
+                    (#{ID},
                     #{PUBLISHER}
                     ,#{TITLE}
                     ,#{DESCRIPTION}

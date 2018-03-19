@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -31,9 +31,29 @@
 <!-- //footer end -->
 
 <script type="text/javascript">
-    document.ready(function () {
-        alert("asdfasdf");
-    });
+    $(document).ready(function(){
+
+        $(".btnSubmit").unbind('click').click(function(){
+            var param = {
+                TITLE : $(".TITLE").val()
+                ,DESCRIPTION : $(".DESCRIPTION").val()
+                ,ADDRESS : $(".ADDRESS").val()
+            };
+            console.log(param);
+            $.ajax({
+                type : 'POST'
+                ,url : contextRootPath + '/wechat/api/event/save.do'
+                ,dataType : 'json'
+                ,data : param
+                ,success : function(response){
+                    console.log(response);
+                }
+                ,error : function(e){
+                    console.log(e);
+                }
+            });
+        });
+    })
 </script>
 
 </body>

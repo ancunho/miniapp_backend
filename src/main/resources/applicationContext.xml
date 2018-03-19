@@ -54,7 +54,7 @@
     </bean>
 
     <bean id="eventAPIService" class="vip.ckbiz.service.impl.EventAPIServiceImpl">
-
+        <property name="sqlSession" ref="sqlSession" />
     </bean>
 
 

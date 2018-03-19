@@ -41,6 +41,7 @@ public class EventAPIController {
         event01VO.setLATITUDE(box.get("LATITUDE"));
         event01VO.setLONGITUDE(box.get("LONGITUDE"));
         event01VO.setPEOPLENUM(box.get("PEOPLENUM"));
+        System.out.println(">>>>EVENT01:>>>" + event01VO.toString());
 
         ServerResponse validResponse = eventAPIService.insertEvent01(event01VO);
         System.out.println(">>>>>>validResponse>>>>>" + validResponse.getMsg());

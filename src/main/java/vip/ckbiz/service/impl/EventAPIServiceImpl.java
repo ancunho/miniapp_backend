@@ -21,7 +21,7 @@ public class EventAPIServiceImpl implements EventAPIService {
     private SqlSession sqlSession;
 
     public ServerResponse<List<EVENT01VO>> selectAllEvent01() {
-        List<EVENT01VO> selectAllEvent01 = sqlSession.selectList("SPCI.EVENTAPI.selectAllEvent01");
+        List<EVENT01VO> selectAllEvent01 = sqlSession.selectList("CKBIZ.EVENTAPI.selectAllEvent01");
         if (CollectionUtils.isEmpty(selectAllEvent01)) {
             return ServerResponse.createByErrorMessage("未找到活动");
         }
@@ -30,7 +30,8 @@ public class EventAPIServiceImpl implements EventAPIService {
     }
 
     public ServerResponse insertEvent01(EVENT01VO event01VO) {
-        int resultCount = sqlSession.insert("SPCI.EVENTAPI.insertEvent01", event01VO);
+        int resultCount = sqlSession.insert("CKBIZ.EVENTAPI.insertEvent01", event01VO);
+        System.out.println(">>>>>" + event01VO.getID());
         System.out.println(">>>>>resultCount : " + resultCount);
         if (resultCount > 0) {
             return ServerResponse.createBySuccessMessage("创建成功");
