@@ -15,7 +15,12 @@
 
 <!-- container start -->
 <div id="container">
-    event index
+    <input type="text" value="" class="TITLE" />
+    <input type="text" value="" class="DESCRIPTION" />
+    <input type="text" value="" class="ADDRESS" />
+
+    <a class="btnSubmit">提交</a>
+
 </div>
 <!-- //container end -->
 
@@ -25,6 +30,11 @@
 </div>
 <!-- //footer end -->
 
+<script type="text/javascript">
+    document.ready(function () {
+        alert("asdfasdf");
+    });
+</script>
 
 </body>
 </html>
