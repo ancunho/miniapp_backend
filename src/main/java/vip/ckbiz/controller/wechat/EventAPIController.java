@@ -43,10 +43,7 @@ public class EventAPIController {
         event01VO.setPEOPLENUM(box.get("PEOPLENUM"));
         System.out.println(">>>>EVENT01:>>>" + event01VO.toString());
 
-        ServerResponse validResponse = eventAPIService.insertEvent01(event01VO);
-        System.out.println(">>>>>>validResponse>>>>>" + validResponse.getMsg());
-
-        return null;
+        return eventAPIService.insertEvent01(event01VO);
     }
 
     public EventAPIService getEventAPIService() {

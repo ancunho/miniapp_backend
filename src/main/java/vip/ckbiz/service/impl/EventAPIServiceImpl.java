@@ -34,7 +34,8 @@ public class EventAPIServiceImpl implements EventAPIService {
         System.out.println(">>>>>" + event01VO.getID());
         System.out.println(">>>>>resultCount : " + resultCount);
         if (resultCount > 0) {
-            return ServerResponse.createBySuccessMessage("创建成功");
+            System.out.println(">>>>>>>>>>>>>>>>>" + event01VO.toString());
+            return ServerResponse.createBySuccess("创建成功", event01VO);
         }
 
         return ServerResponse.createByErrorMessage("创建失败");
