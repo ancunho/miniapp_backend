@@ -3,7 +3,66 @@
 <mapper namespace="CKBIZ.EVENTAPI">
 
 
+    <select id="selectAllEvent01" resultType="vip.ckbiz.vo.EVENT01VO">
+        <![CDATA[
+        SELECT  ID
+                ,PUBLISHER
+                ,TITLE
+                ,DESCRIPTION
+                ,PIC
+                ,EVENT_TYPE
+                ,ISSHOW
+                ,STARTTIME
+                ,ENDTIME
+                ,ADDRESS
+                ,LATITUDE
+                ,LONGITUDE
+                ,PEOPLENUM
+                ,CREATETIME
+                ,UPDATETIME
+          FROM  EVENT01
+         ORDER BY ID DESC
+        ]]>
+    </select>
 
+    <insert id="insertEvent01" useGeneratedKeys="true" keyProperty="ID" parameterType="vip.ckbiz.vo.EVENT01VO">
+        <![CDATA[
+        INSERT INTO EVENT01
+                    (
+                    ,PUBLISHER
+                    ,TITLE
+                    ,DESCRIPTION
+                    ,PIC
+                    ,EVENT_TYPE
+                    ,ISSHOW
+                    ,STARTTIME
+                    ,ENDTIME
+                    ,ADDRESS
+                    ,LATITUDE
+                    ,LONGITUDE
+                    ,PEOPLENUM
+                    ,CREATETIME
+                    ,UPDATETIME
+                    )
+                    VALUES
+                    (
+                    #{PUBLISHER}
+                    ,#{TITLE}
+                    ,#{DESCRIPTION}
+                    ,#{PIC}
+                    ,#{EVENT_TYPE}
+                    ,#{ISSHOW}
+                    ,#{STARTTIME}
+                    ,#{ENDTIME}
+                    ,#{ADDRESS}
+                    ,#{LATITUDE}
+                    ,#{LONGITUDE}
+                    ,#{PEOPLENUM}
+                    ,#{CREATETIME}
+                    ,#{UPDATETIME}
+                    )
+        ]]>
+    </insert>
 
 
 </mapper>

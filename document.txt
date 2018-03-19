@@ -367,14 +367,16 @@ CUSTOER -- 用户表
 	11. CREATETIME
 	12. UPDATETIME
 
-
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
 EVENT01 -- 活动信息表
 	1.  ID			ID
 	2.  PUBLISHER		活动创建者
 	3.  TITLE		活动标题
 	4.  DESCIPTION		活动描述
 	5.  PIC			活动Main图片
-	6.  TYPE		活动类型
+	6.  EVENT_TYPE		活动类型
 	7.  ISSHOW		是否显示
 	8.  STARTTIME		开始日期
 	9.  ENDTIME		结束日期
@@ -384,6 +386,34 @@ EVENT01 -- 活动信息表
 	13. PEOPLENUM		参与人数
 	14. CREATETIME		生成日期
 	15. UPDATETIME		更新日期
+
+CREATE TABLE `ckbiz`.`event01` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `PUBLISHER` VARCHAR(50) NULL,
+  `TITLE` VARCHAR(100) NULL,
+  `DESCIPTION` VARCHAR(200) NULL,
+  `PIC` VARCHAR(100) NULL,
+  `EVENT_TYPE` VARCHAR(2) NULL,
+  `ISSHOW` VARCHAR(1) NULL,
+  `STARTTIME` VARCHAR(20) NULL,
+  `ENDTIME` VARCHAR(20) NULL,
+  `ADDRESS` VARCHAR(45) NULL,
+  `LATITUDE` VARCHAR(45) NULL,
+  `LONGITUDE` VARCHAR(45) NULL,
+  `PEOPLENUM` VARCHAR(10) NULL,
+  `CREATETIME` DATE NULL,
+  `UPDATETIME` DATE NULL,
+  PRIMARY KEY (`ID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COMMENT = '活动信息表';
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+
+
+
 
 EVENT02 -- 活动信息扩展表
 	1. ID			ID
