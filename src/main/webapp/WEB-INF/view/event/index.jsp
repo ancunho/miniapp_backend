@@ -21,6 +21,8 @@
 
     <a class="btnSubmit">提交</a>
 
+    <div><a class="btnSelectAllEvent">获取所有Event</a> </div>
+
 </div>
 <!-- //container end -->
 
@@ -32,6 +34,20 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
+
+        $(".btnSelectAllEvent").unbind('click').click(function(){
+            $.ajax({
+                type : 'GET'
+                , url : contextRootPath + '/wechat/api/event/getAllEvent.do'
+                , dataType : 'json'
+                , success : function(response) {
+                    console.log(response);
+                }
+                , error : function() {
+
+                }
+            });
+        });
 
         $(".btnSubmit").unbind('click').click(function(){
             var param = {

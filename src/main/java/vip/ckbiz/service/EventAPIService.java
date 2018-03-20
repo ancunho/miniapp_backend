@@ -15,7 +15,7 @@ public interface EventAPIService {
      * 查找所有活动
      * @return
      */
-    public ServerResponse<List<EVENT01VO>> selectAllEvent01();
+    public ServerResponse selectAllEvent01();
 
     /**
      * 创建Event

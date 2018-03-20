@@ -20,7 +20,7 @@ public class EventAPIServiceImpl implements EventAPIService {
 
     private SqlSession sqlSession;
 
-    public ServerResponse<List<EVENT01VO>> selectAllEvent01() {
+    public ServerResponse selectAllEvent01() {
         List<EVENT01VO> selectAllEvent01 = sqlSession.selectList("CKBIZ.EVENTAPI.selectAllEvent01");
         if (CollectionUtils.isEmpty(selectAllEvent01)) {
             return ServerResponse.createByErrorMessage("未找到活动");

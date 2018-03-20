@@ -12,6 +12,7 @@ import vip.ckbiz.util.HttpUtility;
 import vip.ckbiz.vo.EVENT01VO;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * 微信API
@@ -23,6 +24,12 @@ public class EventAPIController {
 
     @Autowired
     private EventAPIService eventAPIService;
+
+    @RequestMapping(value = "getAllEvent.do", method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
+    @ResponseBody
+    public ServerResponse selectAllEvent01() {
+        return eventAPIService.selectAllEvent01();
+    }
 
     @RequestMapping(value = "save.do", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
     @ResponseBody
@@ -41,7 +48,14 @@ public class EventAPIController {
         event01VO.setLATITUDE(box.get("LATITUDE"));
         event01VO.setLONGITUDE(box.get("LONGITUDE"));
         event01VO.setPEOPLENUM(box.get("PEOPLENUM"));
-        System.out.println(">>>>EVENT01:>>>" + event01VO.toString());
+        if ("".equals(event01VO.getPUBLISHER())
+                || "".equals(event01VO.getTITLE())
+                || "".equals(event01VO.getDESCRIPTION())
+                || "".equals(event01VO.getEVENT_TYPE())
+                || "".equals(event01VO.getSTARTTIME())
+                || "".equals(event01VO.getENDTIME())) {
+            return ServerResponse.createByErrorMessage("参数错误");
+        }
 
         return eventAPIService.insertEvent01(event01VO);
     }
