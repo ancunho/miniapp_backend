@@ -9,6 +9,7 @@ import vip.ckbiz.common.ServerResponse;
 import vip.ckbiz.service.EventAPIService;
 import vip.ckbiz.util.Box;
 import vip.ckbiz.util.HttpUtility;
+import vip.ckbiz.util.PropertiesUtil;
 import vip.ckbiz.vo.EVENT01VO;
 
 import javax.servlet.http.HttpServletRequest;
@@ -67,4 +68,5 @@ public class EventAPIController {
     public void setEventAPIService(EventAPIService eventAPIService) {
         this.eventAPIService = eventAPIService;
     }
+
 }
