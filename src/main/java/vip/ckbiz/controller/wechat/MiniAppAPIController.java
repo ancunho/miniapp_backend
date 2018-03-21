@@ -3,6 +3,7 @@ package vip.ckbiz.controller.wechat;
 
 import com.google.gson.JsonParser;
 import net.sf.jsqlparser.schema.Server;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -45,12 +46,9 @@ public class MiniAppAPIController {
             return ServerResponse.createByErrorMessage("网络错误，请稍后再试");
         }
 
-        String resultCode = new JsonParser().parse(data).getAsJsonObject().get("errcode").getAsString();
-        String resultMsg = new JsonParser().parse(data).getAsJsonObject().get("errmsg").getAsString();
-
-        if (!"0".equals(resultCode)) {
-            return ServerResponse.createByErrorMessage(resultMsg);
-        }
+//        if (new JsonParser().parse(data).getAsJsonObject().get("errcode").getAsString() != null) {
+//            return ServerResponse.createByErrorMessage("错误，请重试");
+//        }
 
         String openid = new JsonParser().parse(data).getAsJsonObject().get("openid").getAsString();
 
